@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: conferencia-backend
+    env: node
+    plan: free
+    region: oregon
+    branch: main
+    rootDir: backend
+    buildCommand: yarn install
+    startCommand: yarn start
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://postgres:postgres@localhost:5432/conferencias
+      - key: JWT_SECRET
+        value: supersecret
